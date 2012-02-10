@@ -5,18 +5,13 @@ describe "users/index" do
     assign(:users, [
       stub_model(User,
         :name => "Name",
-        :status => "Status",
-        :role => stub_model(Role, :name => 'role')
+        :status => "Status"
       ),
       stub_model(User,
         :name => "Name",
-        :status => "Status",
-        :role => stub_model(Role, :name => 'role')
+        :status => "Status"
       )
     ])
-    
-    assign(:user, stub_model(User, :name => 'name', 
-      :role => stub_model(Role, :name => 'role')))
   end
 
   it "renders a list of users" do
