@@ -22,7 +22,7 @@
   
   <div class="field">
     <%= f.fields_for :role, @user do |f2| %>
-      <%= f2.label :name %><br />
+      <%= f2.label :name, 'Role' %><br />
       <%= f2.text_field :name %>
     <% end %>
   </div>
