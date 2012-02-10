@@ -40,7 +40,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    status = sanitize(params[:user].delete(:status))
     @user = User.new(params[:user])
+    @user.status = status
 
     respond_to do |format|
       if @user.save
@@ -79,5 +81,12 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sanitize(status)
+    # TODO
+    status
   end
 end
