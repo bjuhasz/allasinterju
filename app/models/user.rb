@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
   attr_protected :status
   
+  accepts_nested_attributes_for :role
+  
   def all_permissions
     permissions + role.permissions
   end

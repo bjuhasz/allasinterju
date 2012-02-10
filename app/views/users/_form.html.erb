@@ -19,7 +19,16 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
+  
+  <div class="field">
+    <%= f.fields_for :role, @user do |f2| %>
+      <%= f2.label :name %><br />
+      <%= f2.text_field :name, 'Role' %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
